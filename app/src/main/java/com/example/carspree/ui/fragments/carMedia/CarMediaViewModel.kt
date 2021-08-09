@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.carspree.models.CarMedia
 import com.example.carspree.repository.CarsRepository
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -16,7 +17,7 @@ class CarMediaViewModel: ViewModel() {
     val carMediaLiveData: LiveData<CarMedia> get() = _carMediaLiveData
 
     fun getCarMedia(carId: String){
-        viewModelScope.launch(Dispatchers.IO) {
+        CoroutineScope(Dispatchers.IO).launch {
             val result = repository.getCarMedia(carId)
             withContext(Dispatchers.Main){
                 _carMediaLiveData.value = result

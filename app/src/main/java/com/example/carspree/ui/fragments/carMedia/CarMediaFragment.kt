@@ -60,12 +60,8 @@ class CarMediaFragment : Fragment() {
             }
             mediaAdapter.getPicturesList(carMediaPictures)
             Log.d("pic", carMediaPictures[0].url)
+            mediaAdapter.notifyDataSetChanged()
         })
-    }
-
-    override fun onResume() {
-        super.onResume()
-        mediaAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

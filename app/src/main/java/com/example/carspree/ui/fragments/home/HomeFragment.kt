@@ -82,8 +82,8 @@ class HomeFragment : Fragment() {
             viewModel.allCars.observe(viewLifecycleOwner, {
                 allCarsAdapter.getAllCarsList(it as ArrayList<Result>)
             })
-
         }
+
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
