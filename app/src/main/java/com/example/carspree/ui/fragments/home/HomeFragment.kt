@@ -14,7 +14,6 @@ import com.example.carspree.models.Cars
 import com.example.carspree.models.Make
 import com.example.carspree.models.Result
 
-
 class HomeFragment : Fragment() {
     //DECLARATION AND INITIALIZATION OF VARIABLES
     private var _binding: FragmentHomeBinding? = null
@@ -56,10 +55,12 @@ class HomeFragment : Fragment() {
         //OBSERVING THE RESULT FROM THE CALL AND UPDATING THE RECYCLERVIEW LIST
         viewModel.carMakesLiveData.observe(viewLifecycleOwner, {
             carMakeAdapter.getCarsMakeList(it as ArrayList<Make>)
+            carMakeAdapter.notifyDataSetChanged()
         })
         //OBSERVING THE RESULT FROM THE CALL AND UPDATING THE RECYCLERVIEW LIST
         viewModel.allCars.observe(viewLifecycleOwner, {
             allCarsAdapter.getAllCarsList(it as ArrayList<Result>)
+            allCarsAdapter.notifyDataSetChanged()
         })
         binding.run {
             recyclerView.apply {
