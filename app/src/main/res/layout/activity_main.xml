@@ -43,6 +43,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="10dp"
                     android:text="Explore"
+                    android:fontFamily="@font/noto_sans"
                     android:textColor="@color/black"
                     android:textSize="25sp"
                     android:textStyle="bold"

@@ -43,9 +43,9 @@ class CarDetailsFragment : Fragment() {
         //OBSERVING THE RESULT FROM THE CALL MADE AND UPDATING THE UI
         viewModel.carDetails.observe(viewLifecycleOwner, {
             binding.carAddressTextView.text = it.address
-            binding.carModelTextView.text = it.model.make.name
-            binding.carNameTextView.text = it.model.name
-            binding.carPriceTextView.text = it.marketplacePrice.toString()
+            binding.carModelTextView.text = it.model.name
+            binding.carNameTextView.text = it.model.make.name
+            binding.carPriceTextView.text = "N${it.marketplacePrice.toString()}"
             binding.carYearTextView.text = it.year.toString()
             context?.let { it1 ->
                 Glide.with(it1)
