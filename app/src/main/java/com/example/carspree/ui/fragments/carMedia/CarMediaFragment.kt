@@ -59,7 +59,6 @@ class CarMediaFragment : Fragment() {
                 }
             }
             mediaAdapter.getPicturesList(carMediaPictures)
-            Log.d("pic", carMediaPictures[0].url)
             mediaAdapter.notifyDataSetChanged()
         })
     }
